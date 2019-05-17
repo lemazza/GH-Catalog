@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Home from './pages/home';
+import GamePage from './pages/game-page';
+import {fetchAllGames} from './actions';
+import {connect} from 'react-redux'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  componentDidMount() {
+    console.log('about to fetchAllGames')
+    console.log(this.props);
+    this.props.dispatch(fetchAllGames())
+  }
+
+  render () {
+    return (
+      <Router>
+        <div className="app container">
+          <main>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/games/:gameId" component={GamePage} />
+          </main>
+        </div>
+      </Router>
+    );
+  }
 }
 
-export default App;
+export default connect()(App)
