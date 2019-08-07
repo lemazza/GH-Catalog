@@ -8,7 +8,8 @@ export default class Home extends React.Component {
   render() {
     return (
       <div id="home-page">
-        <PageHeader />
+        <PageHeader hidden={false}/>
+        <PageHeader hidden={true}/>
         <Row>
           <Col xs={3}>
             <PageSideBar />

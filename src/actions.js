@@ -21,3 +21,10 @@ export const fetchAllGames = () => dispatch => {
     dispatch(fetchGamesSuccess(gamesList));
   });
 };
+
+
+export const RESET_FILTERED_LIST = 'RESET_FILTERED_LIST';
+export const resetFilteredList = gamesList => ({
+  type: RESET_FILTERED_LIST,
+  gamesList
+})

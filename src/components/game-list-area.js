@@ -2,6 +2,8 @@ import React from 'react';
 import ListedGame from './listed-game';
 import {connect} from 'react-redux';
 
+import './game-list-area.css';
+
 class GameListArea extends React.Component {
   render() {
     const listIndexStart = this.props.listSize * (this.props.currentPage - 1);
@@ -16,7 +18,7 @@ class GameListArea extends React.Component {
     );
 
     return (
-      <div>
+      <div id="game-list-area">
         <h2>{this.props.title||'game list title'}</h2>
         <ul>
           {gList}
@@ -27,7 +29,7 @@ class GameListArea extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    gamesList: state.games.gamesList,
+    gamesList: state.games.filteredGamesList,
     listSize: state.games.listSize,
     currentPage: state.games.currentPage
 });
