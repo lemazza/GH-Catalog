@@ -9,6 +9,7 @@ class GameListArea extends React.Component {
     const listIndexStart = this.props.listSize * (this.props.currentPage - 1);
     const listIndexEnd = this.props.listSize * (this.props.currentPage);
     const condensedList = this.props.gamesList.slice(listIndexStart, listIndexEnd)
+    console.log(this.props.listTitle);
 
     const gList = condensedList.map((g,index)=> (
         <li key={index}>
@@ -19,7 +20,7 @@ class GameListArea extends React.Component {
 
     return (
       <div id="game-list-area">
-        <h2>{this.props.title||'game list title'}</h2>
+        <h2>{this.props.title|| this.props.listTitle || 'search for games above'}</h2>
         <ul>
           {gList}
         </ul>
@@ -31,7 +32,8 @@ class GameListArea extends React.Component {
 const mapStateToProps = state => ({
     gamesList: state.games.filteredGamesList,
     listSize: state.games.listSize,
-    currentPage: state.games.currentPage
+    currentPage: state.games.currentPage,
+    listTitle: state.games.listTitle
 });
 
 export default connect(mapStateToProps)(GameListArea);

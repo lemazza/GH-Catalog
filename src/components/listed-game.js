@@ -46,7 +46,7 @@ export default function ListedGame(props) {
   					</Col>
   					<Col>
   						<h5>Shelf</h5>
-  						{props.location}
+  						{props.shelf}
   					</Col>
   				</Row>
   			</Col>
