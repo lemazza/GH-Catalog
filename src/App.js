@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 import {fetchAllGames} from './actions';
 
-import Home from './pages/home';
+import HomePage from './pages/home-page';
 import GamePage from './pages/game-page';
 import DesignerPage from './pages/designer-page';
 
@@ -20,7 +20,7 @@ class App extends React.Component{
       <Router>
         <div className="app container-fluid">
           <main>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={HomePage} />
             <Route exact path="/games/:gameId" component={GamePage} />
             <Route exact path="/designers/:designerName" component={DesignerPage} />
           </main>

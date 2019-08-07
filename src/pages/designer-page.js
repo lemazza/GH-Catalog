@@ -3,27 +3,23 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Row, Col} from 'react-bootstrap'
 
-import PageHeader from '../components/page-header';
-import PageSideBar from '../components/page-side-bar';
-import DesignerDisplay from '../components/designer-page-display';
+import PageTemplate from './page-template';
+
+
+import {resetFilteredList, sortByYear, changeTitle, changePage} from '../actions';
 
 class DesignerPage extends React.Component {
 
   render() {
     const {designerName} = this.props.match.params
-    const gameArray = this.props.gamesList.filter(g => g.designer.find(d=> d=== designerName));
+    const gameArray = this.props.gamesList.filter(g => g.designer.find(d=> d=== designerName)).sort(sortByYear);
+    this.props.dispatch(resetFilteredList(gameArray));
+    this.props.dispatch(changeTitle(designerName));
+    this.props.dispatch(changePage(1));
+
     return (
-      <div id="game-page">
-        <PageHeader hidden={false}/>
-        <PageHeader hidden={true}/>
-        <Row>
-          <Col xs={3}>
-            <PageSideBar />
-          </Col>
-          <Col>
-            <DesignerDisplay designerName={designerName} gameArray={gameArray} />
-          </Col>
-        </Row>
+      <div id="designer-page">
+        <PageTemplate />
       </div>
     )
   }

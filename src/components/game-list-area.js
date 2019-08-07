@@ -8,9 +8,7 @@ class GameListArea extends React.Component {
   render() {
     const listIndexStart = this.props.listSize * (this.props.currentPage - 1);
     const listIndexEnd = this.props.listSize * (this.props.currentPage);
-    const condensedList = this.props.gamesList.slice(listIndexStart, listIndexEnd)
-    console.log(this.props.listTitle);
-
+    const condensedList = this.props.gamesList.slice(listIndexStart, listIndexEnd) 
     const gList = condensedList.map((g,index)=> (
         <li key={index}>
           <ListedGame {...g} />
@@ -18,9 +16,14 @@ class GameListArea extends React.Component {
       )
     );
 
+    function resultsTally(listLength) {
+      return `Showing results ${listIndexStart + 1} to ${listIndexStart + condensedList.length} of ${listLength} total`
+    }
+
     return (
       <div id="game-list-area">
         <h2>{this.props.title|| this.props.listTitle || 'search for games above'}</h2>
+        <h3>{resultsTally(this.props.gamesList.length)}</h3>
         <ul>
           {gList}
         </ul>

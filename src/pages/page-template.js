@@ -4,7 +4,7 @@ import PageSideBar from '../components/page-side-bar';
 import GameListArea from '../components/game-list-area';
 import {Row, Col} from 'react-bootstrap'
 
-export default class Home extends React.Component {
+export default class PageTemplate extends React.Component {
   render() {
     return (
       <div id="home-page">

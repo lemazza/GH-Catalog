@@ -16,6 +16,15 @@ export default function gamesReducer(state = initialState, action) {
 
     case actions.RESET_FILTERED_LIST:
       return Object.assign({}, state, {filteredGamesList: action.gamesList})
+
+    case actions.SORT_FILTERED_LIST:
+      return Object.assign({}, state, {filteredGamesList: action.filteredList})
+
+    case actions.CHANGE_PAGE:
+      return Object.assign({}, state, {currentPage: action.newPage})
+
+    case actions.CHANGE_TITLE:
+      return Object.assign({}, state, {listTitle: action.newTitle})
       
     default:
       return state;

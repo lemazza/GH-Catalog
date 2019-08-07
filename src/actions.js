@@ -7,23 +7,6 @@ export const fetchGamesSuccess = gamesList => ({
   gamesList
 });
 
-function sortByDate(a, b) {
-  const dateA = new Date(a.lastModified);
-  const dateB = new Date(b.lastModified);
-  return dateB - dateA
-}
-
-function sortByName(a, b) {
-  return a.name - b.name;
-}
-
-function sortByRating(a, b) {
-  return a.bggBayesAvg - b.bggBayesAvg;
-}
-
-function sortByYear(a, b) {
-  return a.year - b.year;
-}
 
 export const fetchAllGames = () => dispatch => {
   fetch(`${API_URL}/games`)
@@ -35,7 +18,7 @@ export const fetchAllGames = () => dispatch => {
     return res.json();
   })
   .then(gamesList => {
-    gamesList.sort(sortByDate)
+    gamesList.sort(sortByLastModified)
     dispatch(fetchGamesSuccess(gamesList));
   });
 };
@@ -47,13 +30,36 @@ export const resetFilteredList = gamesList => ({
   gamesList
 })
 
+export function sortByLastModified(a, b) {
+  const dateA = new Date(a.lastModified);
+  const dateB = new Date(b.lastModified);
+  return dateB - dateA
+}
+
+export function sortByName(a, b) {
+  return a.name - b.name;
+}
+
+export function sortByRating(a, b) {
+  return a.bggBayesAvg - b.bggBayesAvg;
+}
+
+export const sortByYear = (a, b) => {
+  return a.year - b.year;
+}
+
+export function doNotSort (a, b) {
+  return 0
+}
+
+
 export const SORT_FILTERED_LIST = 'SORT_FILTERED_LIST';
-export const sortFilteredList = sortType => {
+export const sortFilteredList = ( sortType, filteredList ) => {
   let sortFunc;
   
   switch (sortType) {
     case 'date':
-      sortFunc = sortByDate
+      sortFunc = sortByLastModified
       break;
     case 'name':
       sortFunc = sortByName
@@ -64,10 +70,26 @@ export const sortFilteredList = sortType => {
     case 'rating':
       sortFunc = sortByRating
       break;
+    default:
+      sortFunc = doNotSort;
   }
+
+  filteredList.sort(sortFunc);
 
   return {
   type: SORT_FILTERED_LIST,
-  sortFunc
+  filteredList
   }
 }
+
+export const CHANGE_PAGE = 'CHANGE_PAGE';
+export const changePage = newPage => ({
+  type: CHANGE_PAGE,
+  newPage
+})
+
+export const CHANGE_TITLE = 'CHANGE_TITLE';
+export const changeTitle = newTitle => ({
+  type: CHANGE_TITLE,
+  newTitle
+})
