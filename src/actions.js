@@ -41,7 +41,7 @@ export function sortByName(a, b) {
 }
 
 export function sortByRating(a, b) {
-  return a.bggBayesAvg - b.bggBayesAvg;
+  return b.bggBayesAvg - a.bggBayesAvg;
 }
 
 export const sortByYear = (a, b) => {

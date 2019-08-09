@@ -4,7 +4,6 @@ import {Pagination} from 'react-bootstrap';
 
 import {changePage} from '../actions';
 
-import './paginator.css'
 
 class Paginator extends React.Component {
   render() {
@@ -19,7 +18,9 @@ class Paginator extends React.Component {
       return `${listIndexStart + 1} - ${listIndexStart + condensedList.length} of ${listLength}`
     }
 
-
+/*
+  PAGE CHANGING
+*/
     function incrementPage() {
       dispatch(changePage(currentPage +1));
     }
@@ -36,6 +37,9 @@ class Paginator extends React.Component {
       dispatch(changePage(lastpage));
     }  
 
+/*
+  DISABLED STATUS
+*/
     function firstStatus () {
         return (currentPage === 1) ? true : false
     }

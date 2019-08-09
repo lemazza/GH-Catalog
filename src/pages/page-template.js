@@ -7,7 +7,7 @@ import {Row, Col} from 'react-bootstrap'
 export default class PageTemplate extends React.Component {
   render() {
     return (
-      <div id="home-page">
+      <div>
         <PageHeader hidden={false}/>
         <PageHeader hidden={true}/>
         <Row>
