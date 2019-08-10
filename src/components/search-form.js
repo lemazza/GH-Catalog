@@ -2,15 +2,11 @@ import React from 'react';
 import {Form, Button} from 'react-bootstrap'
 import {connect} from 'react-redux';
 
-import {resetFilteredList, sortByRating, changeTitle} from '../actions';
+import {resetFilteredList, sortByRating, changeTitle, changePage} from '../actions';
 
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  handleTest() {
-    console.log('hi')
   }
  
   render () {
@@ -18,12 +14,13 @@ class SearchForm extends React.Component {
 
     function handleChange(e) {
       const searchTerm = e.target.value
-      console.log(searchTerm)
-      dispatch(changeTitle('Search: ' + searchTerm))
       const filteredList = gamesList.filter(g=> {
         const regex = RegExp(searchTerm, 'i')
         return regex.test(g.name)
       }).sort(sortByRating)
+
+      dispatch(changeTitle('Search: ' + searchTerm));
+      dispatch(changePage(1));
       dispatch(resetFilteredList(filteredList));
     }
 
