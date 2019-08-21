@@ -1,6 +1,9 @@
 import React from 'react';
 import {Row, Col, Image} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+
+import ShelfLocationButton from './shelf-location-button'
+
 import './listed-game.css'
 
 export default function ListedGame(props) {
@@ -46,7 +49,7 @@ export default function ListedGame(props) {
   					</Col>
   					<Col>
   						<h5>Shelf</h5>
-  						{props.shelf}
+  						<ShelfLocationButton location={props.location}/>
   					</Col>
   				</Row>
   			</Col>

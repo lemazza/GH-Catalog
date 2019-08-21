@@ -93,3 +93,9 @@ export const changeTitle = newTitle => ({
   type: CHANGE_TITLE,
   newTitle
 })
+
+export const TOGGLE_MAP_MODAL = 'TOGGLE_MAP_MODAL';
+export const toggleMapModal = newBool => ({
+  type: TOGGLE_MAP_MODAL,
+  newBool
+})

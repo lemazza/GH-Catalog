@@ -10,8 +10,6 @@ import DesignerPage from './pages/designer-page';
 
 class App extends React.Component{
   componentDidMount() {
-    console.log('about to fetchAllGames')
-    console.log(this.props);
     this.props.dispatch(fetchAllGames())
   }
 
