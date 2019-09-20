@@ -49,7 +49,7 @@ export default function ListedGame(props) {
   					</Col>
   					<Col>
   						<h5>Shelf</h5>
-  						<ShelfLocationButton location={props.location}/>
+  						<ShelfLocationButton shelf={props.shelf} locationName={props.locationName}/>
   					</Col>
   				</Row>
   			</Col>

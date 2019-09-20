@@ -99,3 +99,10 @@ export const toggleMapModal = newBool => ({
   type: TOGGLE_MAP_MODAL,
   newBool
 })
+
+export const CHANGE_MAP_MODAL_LOCATION = 'CHANGE_MAP_MODAL_LOCATION';
+export const changeMapModalLocation = (newShelf, newLocationName) => ({
+  type: CHANGE_MAP_MODAL_LOCATION,
+  newShelf,
+  newLocationName
+})

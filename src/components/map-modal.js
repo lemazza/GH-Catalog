@@ -2,9 +2,8 @@ import React from 'react';
 import {Button, Modal, Image} from 'react-bootstrap';
 import {connect} from 'react-redux';
 
-import ghMap from '../images/floorplan01.pdf';
-
 import {toggleMapModal} from '../actions';
+import {imageFinder} from '../Utils/mapImageLocation'
 
 
 class MapModal extends React.Component {
@@ -25,7 +24,8 @@ class MapModal extends React.Component {
           <Modal.Title>GameHaus Map</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Image src={ghMap} />
+          <h3>{this.props.mapModalLocationName}</h3>
+          <Image src={imageFinder(this.props.mapModalShelf)} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.handleClose}>
@@ -38,6 +38,8 @@ class MapModal extends React.Component {
 
 const mapStateToProps = state => ({
   showMapModal: state.games.showMapModal,
+  mapModalLocationName: state.games.mapModalLocationName,
+  mapModalShelf: state.games.mapModalShelf
 });
 
 export default connect(mapStateToProps)(MapModal);

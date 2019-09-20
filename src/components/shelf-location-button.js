@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 
-import {toggleMapModal} from '../actions';
+import {toggleMapModal, changeMapModalLocation} from '../actions';
 
 
 class ShelfLocationButton extends React.Component {
@@ -13,14 +13,14 @@ class ShelfLocationButton extends React.Component {
   }
 
   handleClick() {
-    console.log('clicked, current show value is ', this.props)
+    this.props.dispatch(changeMapModalLocation(this.props.shelf, this.props.locationName))
     this.props.dispatch(toggleMapModal(!this.props.showMapModal));
   }
 
   render() {
     return (
       <div className="shelf-location-btn">
-        <Button onClick={this.handleClick} >{this.props.location}</Button>
+        <Button onClick={this.handleClick} >{this.props.locationName}</Button>
       </div>
     )
   }
