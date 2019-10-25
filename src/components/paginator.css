@@ -1,0 +1,40 @@
+
+a.page-link,
+span.page-link {
+  color: black;
+  border: 3px solid #6c757d;
+}
+
+.results-pagination {
+  margin-bottom: 5px;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  z-index: 3;
+  color: white;
+  background-color: #6c757d;
+  border: 3px solid #6c757d;
+  transition: color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+}
+
+.pagination > li > span:hover {
+  color: black;
+  background-color: white;
+  transition: color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+}
+
+.pagination > li > span:focus,
+.pagination > li > a:focus {
+  box-shadow: none;
+  border: 3px solid #343a40;
+  transition: border .15s ease-in-out;
+}
+
+.page-item.disabled .page-link {
+    color: #343a40;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}

@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 
 import {toggleMapModal, changeMapModalLocation} from '../actions';
 
+import './shelf-location-button.css';
+
 
 class ShelfLocationButton extends React.Component {
   constructor(props) {
@@ -13,14 +15,14 @@ class ShelfLocationButton extends React.Component {
   }
 
   handleClick() {
-    this.props.dispatch(changeMapModalLocation(this.props.shelf, this.props.locationName))
+    this.props.dispatch(changeMapModalLocation(this.props.gameName, this.props.shelf, this.props.locationName))
     this.props.dispatch(toggleMapModal(!this.props.showMapModal));
   }
 
   render() {
     return (
-      <div className="shelf-location-btn">
-        <Button onClick={this.handleClick} >{this.props.locationName}</Button>
+      <div className="ml-auto align-self-center shelf-location-btn">
+        <Button className="map-modal-btn btn-danger text-light " size="sm" onClick={this.handleClick} >Location</Button>
       </div>
     )
   }

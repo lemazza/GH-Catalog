@@ -1,0 +1,35 @@
+.game-header a:hover, 
+.game-designer a:hover {
+  text-decoration:  none;
+}
+
+.game-year {
+  align-self:   center; 
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.game-info {
+  text-align:  center;
+}
+
+.game-img {
+  display: block;
+  max-height: 60vh;
+  margin: 0 auto;
+}
+
+.game-desc p{
+  white-space: pre-wrap;
+}
+
+.game-desc h4 {
+}
+
+.bgg-button {
+  background-color: #3f3a60;
+}
+
+.bgg-button:hover {
+  background-color: #2a2740;;
+}

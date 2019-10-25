@@ -1,4 +1,58 @@
 #header-logo {
-  height: 60px;
-  width: 60px;
+  min-height: 60px;
+  min-width: 60px;
+  max-height: 60px;
+  max-width: 60px;
+}
+
+header .navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand h1 {
+  font-size: 250%;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* span with .special for different colored umlaut*/
+.specialDiv {
+    font-size: 72pt;
+    color: #00aaff;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Hide the fact the i can't be selected... */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.special {
+    position: relative;
+    display: inline-block;
+}
+
+.special:before,
+.special:after {
+    opacity: 1;
+    content: 'ë';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font: inherit;
+}
+
+/* The 0.35 might have to be adjusted for other fonts. */
+.special:before {
+    color: #ff5500;
+    clip: rect(auto, auto, 0.35em, auto);
+}
+.special:after {
+    clip: rect(0.35em, auto, auto, auto);
+}
+
+.special i {
+    font: inherit;
+    opacity: 0;
 }

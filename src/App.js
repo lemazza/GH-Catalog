@@ -8,6 +8,8 @@ import HomePage from './pages/home-page';
 import GamePage from './pages/game-page';
 import DesignerPage from './pages/designer-page';
 
+import './App.css';
+
 class App extends React.Component{
   componentDidMount() {
     this.props.dispatch(fetchAllGames())
@@ -18,7 +20,8 @@ class App extends React.Component{
       <Router>
         <div className="app container-fluid">
           <main>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/home" component={HomePage} />
+            <Route path="/home/:searchTerm" component={HomePage} />
             <Route exact path="/games/:gameId" component={GamePage} />
             <Route exact path="/designers/:designerName" component={DesignerPage} />
           </main>

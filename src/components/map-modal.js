@@ -3,8 +3,9 @@ import {Button, Modal, Image} from 'react-bootstrap';
 import {connect} from 'react-redux';
 
 import {toggleMapModal} from '../actions';
-import {imageFinder} from '../Utils/mapImageLocation'
+import {imageFinder} from '../utils/map-image-location'
 
+import './map-modal.css'
 
 class MapModal extends React.Component {
   constructor(props) {
@@ -19,15 +20,15 @@ class MapModal extends React.Component {
 
   render() {
     return (
-      <Modal centered show={this.props.showMapModal} onHide={this.handleClose}>
-        <Modal.Header closeButton>
+      <Modal size="lg" show={this.props.showMapModal} onHide={this.handleClose}>
+        <Modal.Header className="text-white" closeButton>
           <Modal.Title>GameHaus Map</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <h3>{this.props.mapModalLocationName}</h3>
-          <Image src={imageFinder(this.props.mapModalShelf)} />
+        <Modal.Body className="bg-white">
+          <h3>{this.props.mapModalGameName} <br />Shelf: {this.props.mapModalLocationName}</h3>
+          <Image className="img-gh-map"fluid src={imageFinder(this.props.mapModalShelf)} />
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="bg-white">
           <Button variant="secondary" onClick={this.handleClose}>
             Close
           </Button>
@@ -39,7 +40,8 @@ class MapModal extends React.Component {
 const mapStateToProps = state => ({
   showMapModal: state.games.showMapModal,
   mapModalLocationName: state.games.mapModalLocationName,
-  mapModalShelf: state.games.mapModalShelf
+  mapModalShelf: state.games.mapModalShelf,
+  mapModalGameName: state.games.mapModalGameName
 });
 
 export default connect(mapStateToProps)(MapModal);

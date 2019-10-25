@@ -21,8 +21,8 @@ class GameListArea extends React.Component {
 
     return (
       <div id="game-list-area">
-        <h2>{this.props.title|| this.props.listTitle || 'search for games above'}</h2>
-        <Paginator />
+        <h2 className="sticky-top">{this.props.title|| this.props.listTitle || 'search for games above'}</h2>
+        <Paginator className="sticky-top" />
         <ul>
           {gList}
         </ul>

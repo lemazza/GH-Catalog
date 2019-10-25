@@ -14,9 +14,6 @@ export default class PageTemplate extends React.Component {
         <PageHeader hidden={true}/>
         <MapModal />
         <Row>
-          <Col xs={3}>
-            <PageSideBar />
-          </Col>
           <Col>  
             <GameListArea />
           </Col>

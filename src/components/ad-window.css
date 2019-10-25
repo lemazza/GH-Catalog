@@ -1,0 +1,39 @@
+#ad-window {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+#ad-container {
+  position: relative;
+  text-align: center;
+}
+
+.ad-img-container {
+  width: 300px
+}
+
+.ad-title {
+  position: absolute;
+  top: 0px;
+  left: 16px;
+  color: white;
+  font-size: 300%;
+  text-shadow: 2px 2px 2px black;
+  font-family: 'Oleo Script', cursive;
+}
+
+.ad-name {
+  margin-top: -1.5rem;
+  transform: skew(170deg, 170deg);
+}
+
+.ad-the {
+  margin-left: 24px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.ad-category {
+  text-align: right;
+  font-size: 1.5rem;
+}

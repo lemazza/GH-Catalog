@@ -1,11 +1,13 @@
 .listed-game {
-  display: inline-flex;
-  justify-content:  flex-start; 
   margin-bottom: 40px;
 }
 
+.listed-game .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .listed-game-header {
-  background-color: #ccc;
   margin-right: 0;
   padding: 5px;
 }
@@ -13,10 +15,10 @@
 .listed-game-year {
   align-self:   center; 
   margin-left: 5px;
+  font-weight: 600;
 }
 
 .listed-game-designer {
-  background-color: #999;
   margin-right: 0;
   padding-left:  5px;
 }
@@ -27,4 +29,22 @@
 
 .listed-game h5 {
   font-size:  1rem;
+}
+
+.game-img-container {
+  height: 150px;
+}
+
+.listed-game-img {
+  display: block;
+  width: auto;
+  height: auto;
+  min-width: 100px;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.listed-game a:hover {
+  text-decoration:  none;
 }

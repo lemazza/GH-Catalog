@@ -3,6 +3,7 @@ import * as actions from './actions.js'
 
 const initialState = {
   showMapModal: false,
+  mapModalGameName: 'unselected',
   mapModalShelf: 'unknown',
   mapModalLocationName: 'none',
   allGamesList: [],
@@ -33,7 +34,7 @@ export default function gamesReducer(state = initialState, action) {
       return Object.assign({}, state, {showMapModal: action.newBool})
 
     case actions.CHANGE_MAP_MODAL_LOCATION:
-      return Object.assign({}, state, {mapModalShelf: action.newShelf, mapModalLocationName: action.newLocationName})
+      return Object.assign({}, state, {mapModalShelf: action.newShelf, mapModalLocationName: action.newLocationName, mapModalGameName: action.newGameName})
       
     default:
       return state;

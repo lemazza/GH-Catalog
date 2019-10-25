@@ -1,5 +1,6 @@
 import React from 'react';
 import './page-side-bar.css';
+import AdWindow from './ad-window.js';
 
 export default function PageSideBar (props) {
   return (

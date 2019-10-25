@@ -101,8 +101,9 @@ export const toggleMapModal = newBool => ({
 })
 
 export const CHANGE_MAP_MODAL_LOCATION = 'CHANGE_MAP_MODAL_LOCATION';
-export const changeMapModalLocation = (newShelf, newLocationName) => ({
+export const changeMapModalLocation = (newGameName, newShelf, newLocationName) => ({
   type: CHANGE_MAP_MODAL_LOCATION,
+  newGameName,
   newShelf,
   newLocationName
 })
