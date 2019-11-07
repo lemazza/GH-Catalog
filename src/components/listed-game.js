@@ -41,7 +41,9 @@ export default function ListedGame(props) {
 		  <Row>        
   			<Col sm={3}>
   				<div className="game-img-container">
-            <Image className="listed-game-img" src={props.image} alt={props.name} />
+              <Link to={`/games/${props.bggId}`}>
+                <Image className="listed-game-img" src={props.image} alt={props.name} />
+              </Link>
           </div>
   			</Col>
 

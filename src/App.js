@@ -1,10 +1,11 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import {connect} from 'react-redux'
 
 import {fetchAllGames} from './actions';
 
 import HomePage from './pages/home-page';
+import SearchPage from './pages/search-page';
 import GamePage from './pages/game-page';
 import DesignerPage from './pages/designer-page';
 
@@ -20,10 +21,15 @@ class App extends React.Component{
       <Router>
         <div className="app container-fluid">
           <main>
-            <Route exact path="/home" component={HomePage} />
-            <Route path="/home/:searchTerm" component={HomePage} />
-            <Route exact path="/games/:gameId" component={GamePage} />
-            <Route exact path="/designers/:designerName" component={DesignerPage} />
+            <Switch >
+              <Route exact path="/home" component={HomePage} />
+              <Route path="/search/:searchTerm" component={SearchPage} />
+              <Route exact path="/games/:gameId" component={GamePage} />
+              <Route exact path="/designers/:designerName" component={DesignerPage} />
+              <Redirect exact from="/" to="/home" />
+              <Redirect  from="*" to="/home" />
+
+            </Switch>
           </main>
         </div>
       </Router>

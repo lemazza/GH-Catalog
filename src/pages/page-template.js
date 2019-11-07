@@ -22,3 +22,4 @@ export default class PageTemplate extends React.Component {
     )
   }
 }
+

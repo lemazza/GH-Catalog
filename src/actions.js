@@ -9,6 +9,7 @@ export const fetchGamesSuccess = gamesList => ({
 
 
 export const fetchAllGames = () => dispatch => {
+  console.log(API_URL);
   fetch(`${API_URL}/games`)
   .then((res, other) => {
     if (!res.ok) {
