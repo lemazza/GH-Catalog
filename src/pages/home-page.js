@@ -115,7 +115,7 @@ class HomePage extends React.Component {
             </Row>
           </Col>
 
-          <Col sm={4} lg={3} className="bg-secondary">
+          <Col  sm={4} lg={3} xl={2} className="bg-secondary">
             <h3>Recently Added </h3>
             <RecentAdditionsList />
           </Col>

@@ -21,20 +21,23 @@ function SmallListedGame(props) {
       <div className="game-date-added">
         {dAdded.toLocaleDateString('en-US', options )}
       </div> 
-      <Link className="d-inline-flex bg-dark new-addition-link rounded-right mx-2" to={`/games/${props.bggId}`} >
-       
-        <div className="sm-game-img-container">
-          <Image className="sm-game-img mh-100 mw-100" src={props.image} alt={props.name} /> 
-        </div>
-        
+      <Link className=" new-addition-link bg-dark rounded-right" to={`/games/${props.bggId}`} >
+        <div className="row">
 
-        <p className="p-2 mb-0">
-          <span className="text-light">{props.name}</span><span> </span>
-          <span className="text-secondary text-small">
-            ({props.year})
-          </span>   
-        </p>
-        
+          <div className="sm-game-img-container col-5">
+            <Image className="sm-game-img" fluid  src={props.image} alt={props.name} /> 
+          </div>
+          
+          <div className="col">
+            <p className="pt-1 pl-0 pb-1 pr-1 mb-0">
+              <span className="text-light">{props.name}</span>
+              <span> </span>
+              <span className="text-secondary text-small">
+                ({props.year})
+              </span>   
+            </p>
+          </div>
+        </div>
       </Link>
     </li>
   )

@@ -1,16 +1,17 @@
 li .sm-game-img-container {
-  display: inline-block;
-  height: 100px;
-  width: 100px;
+  min-height: 50px;
+  max-height: 100px;
+  padding-right: 0;
 }
 
 .sm-game-img {
-  display: inline-block;
   max-height: 100%;
-  margin: 0 auto;
 }
 
 .new-addition-link {
   display: block;
-  width: 90%;
+}
+
+.new-addition-link:hover {
+  text-decoration: none;
 }
