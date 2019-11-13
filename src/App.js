@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import {connect} from 'react-redux'
+require('dotenv').config()
 
 import {fetchAllGames} from './actions';
 
