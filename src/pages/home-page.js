@@ -63,7 +63,7 @@ class HomePage extends React.Component {
                   <tbody>
                     <tr>
                       <th scope="row">Monday</th>
-                      <td colspan="2" className="text-center">Closed</td>
+                      <td colSpan="2" className="text-center">Closed</td>
                       <td>-</td>
                       <td>-</td>
                     </tr>
