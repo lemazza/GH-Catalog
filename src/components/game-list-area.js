@@ -13,7 +13,7 @@ class GameListArea extends React.Component {
     const condensedList = this.props.gamesList.slice(listIndexStart, listIndexEnd)  
 
     const gList = condensedList.map((g,index)=> (
-        <li key={index}>
+        <li key={g.bggId}>
           <ListedGame {...g} />
         </li>
       )

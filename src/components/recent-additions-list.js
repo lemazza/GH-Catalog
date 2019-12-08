@@ -14,7 +14,7 @@ class RecentAdditionsList extends React.Component {
     }).slice(0, 10)  
 
     const gList = condensedList.map((g,index)=> (
-      <SmallListedGame key={index} {...g} />      )
+      <SmallListedGame key={g.bggId} {...g} />      )
     );
 
     return (
